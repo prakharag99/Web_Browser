@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<div class="search_area">
+  <!-- <h1>Jingo</h1> -->
+  <div class="searchBar">
+    <a href="#" class="searchBtn" onclick="performSearch()">
+      <div title="Search the web"><i class="fas fa-search"></i></div>
+    </a>
+    <input type="text" placeholder="Search the web.." class="searchInput" id="searchInput"
+      onkeydown="handleKeyDown(event)" />
+  </div>
+</div>
+
+<script>
+  function performSearch() {
+    var searchInput = document.getElementById("searchInput");
+    var searchValue = searchInput.value;
+    var encodedSearchValue = encodeURIComponent(searchValue);
+    var youtubeURL = "https://www.youtube.com/results?search_query=" + encodedSearchValue;
+    window.location.href = youtubeURL;
+  }
+
+  function handleKeyDown(event) {
+    if (event.keyCode === 13) {
+      performSearch();
+      event.preventDefault();
+    }
+  }     
+</script>
+
+
+</html>

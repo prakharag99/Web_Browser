@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Web Browser</title>
+    <style>
+      #browser-frame {
+        width: 100%;
+        height: 80vh; /* Adjust the height as per your preference */
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="url-input" />
+    <button onclick="loadURL()">Go</button>
+    <br />
+    <iframe id="browser-frame" src=""></iframe>
+
+    <script>
+      function loadURL() {
+        var url = document.getElementById("url-input").value;
+        var iframe = document.getElementById("browser-frame");
+        iframe.src = url;
+      }
+    </script>
+  </body>
+</html>
